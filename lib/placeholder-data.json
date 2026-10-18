@@ -1,0 +1,68 @@
+{
+  "group": [
+    {
+      "id": "HE2U8G7F",
+      "name": "The Crazy Ones",
+      "event": "Christmas",
+      "date": "2023-12-25"
+    }
+  ],
+  "members": [
+    {
+      "id": "1",
+      "name": "Jon Doe",
+      "iconId": "shrimp",
+      "colorChoice": "green"
+    },
+    {
+      "id": "2",
+      "name": "Jane Doe",
+      "iconId": "bear",
+      "colorChoice": "red"
+    },
+    {
+      "id": "3",
+      "name": "John Smith",
+      "iconId": "fox",
+      "colorChoice": "blue"
+    }
+  ],
+  "gifts": [
+    {
+      "id": "1",
+      "name": "Wireless Noise-Canceling Headphones",
+      "link": "https://example.com/headphones",
+      "price": 129.99
+    },
+    {
+      "id": "2",
+      "name": "Scented Soy Candle Set",
+      "link": "https://example.com/candles",
+      "price": 24.5
+    },
+    {
+      "id": "3",
+      "name": "Ergonomic Mechanical Keyboard",
+      "link": "https://example.com/keyboard",
+      "price": 89.99
+    },
+    {
+      "id": "8",
+      "name": "Stainless Steel Vacuum Insulated Tumbler",
+      "link": "https://example.com/tumbler",
+      "price": 19.95
+    },
+    {
+      "id": "4",
+      "name": "Smart Fitness Tracker Watch",
+      "link": "https://example.com/fitness-tracker",
+      "price": 59.99
+    },
+    {
+      "id": "5",
+      "name": "Gourmet Coffee Bean Sampler",
+      "link": "https://example.com/coffee-sampler",
+      "price": 34.0
+    }
+  ]
+}

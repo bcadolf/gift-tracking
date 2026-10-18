@@ -1,0 +1,27 @@
+interface ActionButtonProps {
+  name: string;
+  onClick?: () => void;
+  type: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
+  form?: string;
+}
+
+export default function ActionButton({
+  name,
+  onClick,
+  type,
+  disabled,
+  form,
+}: ActionButtonProps) {
+  return (
+    <button
+      type={type}
+      onClick={onClick}
+      form={form}
+      disabled={disabled}
+      className='rounded-md bg-primary border-2 border-primary-soft transition-colors hover:border-accent px-3 py-2 text-primary-foreground hover:bg-primary-hover shadow-md shadow-current'
+    >
+      {name}
+    </button>
+  );
+}

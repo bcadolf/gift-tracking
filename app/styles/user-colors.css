@@ -1,0 +1,126 @@
+[data-theme='slate'] {
+  --primary: var(--color-slate-500);
+  --primary-hover: var(--color-slate-600);
+  --primary-soft: var(--color-slate-100);
+  --primary-soft-text: var(--color-slate-700);
+  --primary-foreground: white;
+}
+[data-theme='red'] {
+  --primary: var(--color-red-500);
+  --primary-hover: var(--color-red-600);
+  --primary-soft: var(--color-red-100);
+  --primary-soft-text: var(--color-red-700);
+  --primary-foreground: white;
+}
+[data-theme='orange'] {
+  --primary: var(--color-orange-500);
+  --primary-hover: var(--color-orange-600);
+  --primary-soft: var(--color-orange-100);
+  --primary-soft-text: var(--color-orange-700);
+  --primary-foreground: white;
+}
+[data-theme='amber'] {
+  --primary: var(--color-amber-500);
+  --primary-hover: var(--color-amber-600);
+  --primary-soft: var(--color-amber-100);
+  --primary-soft-text: var(--color-amber-700);
+  --primary-foreground: var(--color-amber-950);
+}
+[data-theme='yellow'] {
+  --primary: var(--color-yellow-500);
+  --primary-hover: var(--color-yellow-600);
+  --primary-soft: var(--color-yellow-100);
+  --primary-soft-text: var(--color-yellow-700);
+  --primary-foreground: var(--color-yellow-950);
+}
+[data-theme='lime'] {
+  --primary: var(--color-lime-500);
+  --primary-hover: var(--color-lime-600);
+  --primary-soft: var(--color-lime-100);
+  --primary-soft-text: var(--color-lime-700);
+  --primary-foreground: var(--color-lime-950);
+}
+[data-theme='green'] {
+  --primary: var(--color-green-500);
+  --primary-hover: var(--color-green-600);
+  --primary-soft: var(--color-green-100);
+  --primary-soft-text: var(--color-green-700);
+  --primary-foreground: white;
+}
+[data-theme='emerald'] {
+  --primary: var(--color-emerald-500);
+  --primary-hover: var(--color-emerald-600);
+  --primary-soft: var(--color-emerald-100);
+  --primary-soft-text: var(--color-emerald-700);
+  --primary-foreground: white;
+}
+[data-theme='teal'] {
+  --primary: var(--color-teal-500);
+  --primary-hover: var(--color-teal-600);
+  --primary-soft: var(--color-teal-100);
+  --primary-soft-text: var(--color-teal-700);
+  --primary-foreground: white;
+}
+[data-theme='cyan'] {
+  --primary: var(--color-cyan-500);
+  --primary-hover: var(--color-cyan-600);
+  --primary-soft: var(--color-cyan-100);
+  --primary-soft-text: var(--color-cyan-700);
+  --primary-foreground: white;
+}
+[data-theme='sky'] {
+  --primary: var(--color-sky-500);
+  --primary-hover: var(--color-sky-600);
+  --primary-soft: var(--color-sky-100);
+  --primary-soft-text: var(--color-sky-700);
+  --primary-foreground: white;
+}
+[data-theme='blue'] {
+  --primary: var(--color-blue-500);
+  --primary-hover: var(--color-blue-600);
+  --primary-soft: var(--color-blue-100);
+  --primary-soft-text: var(--color-blue-700);
+  --primary-foreground: white;
+}
+[data-theme='indigo'] {
+  --primary: var(--color-indigo-500);
+  --primary-hover: var(--color-indigo-600);
+  --primary-soft: var(--color-indigo-100);
+  --primary-soft-text: var(--color-indigo-700);
+  --primary-foreground: white;
+}
+[data-theme='violet'] {
+  --primary: var(--color-violet-500);
+  --primary-hover: var(--color-violet-600);
+  --primary-soft: var(--color-violet-100);
+  --primary-soft-text: var(--color-violet-700);
+  --primary-foreground: white;
+}
+[data-theme='purple'] {
+  --primary: var(--color-purple-500);
+  --primary-hover: var(--color-purple-600);
+  --primary-soft: var(--color-purple-100);
+  --primary-soft-text: var(--color-purple-700);
+  --primary-foreground: white;
+}
+[data-theme='fuchsia'] {
+  --primary: var(--color-fuchsia-500);
+  --primary-hover: var(--color-fuchsia-600);
+  --primary-soft: var(--color-fuchsia-100);
+  --primary-soft-text: var(--color-fuchsia-700);
+  --primary-foreground: white;
+}
+[data-theme='pink'] {
+  --primary: var(--color-pink-500);
+  --primary-hover: var(--color-pink-600);
+  --primary-soft: var(--color-pink-100);
+  --primary-soft-text: var(--color-pink-700);
+  --primary-foreground: white;
+}
+[data-theme='rose'] {
+  --primary: var(--color-rose-500);
+  --primary-hover: var(--color-rose-600);
+  --primary-soft: var(--color-rose-100);
+  --primary-soft-text: var(--color-rose-700);
+  --primary-foreground: white;
+}

@@ -1,5 +1,4 @@
-import { GetGroupData } from '@/actions/groups';
-import { GetGroupMembers } from '@/actions/members';
+import { getGroupWithMembers } from '@/actions/groups';
 import AddMemberForm from '@/components/forms/AddMemberForm';
 import MemberIcon from '@/components/ui/MemberIcon';
 import Link from 'next/link';
@@ -10,14 +9,14 @@ export default async function GiftGroupPage({
   params: Promise<{ groupCode: string }>;
 }) {
   const { groupCode } = await params;
+  const query = await getGroupWithMembers(groupCode);
 
-  const groupData = await GetGroupData(groupCode);
-
-  if (!groupData) {
+  if (!query) {
     return <div>Difficulties finding the group.</div>;
   }
 
-  const members = await GetGroupMembers(groupCode);
+  const groupData = query.group;
+  const members = query.memData;
 
   return (
     <div className='flex items-center justify-center flex-col p-4'>
@@ -35,7 +34,7 @@ export default async function GiftGroupPage({
               href={`/gift-group/${groupCode}/${member.id}`}
               className='flex flex-row gap-3 p-2 items-center p-2'
             >
-              <MemberIcon id={member.iconId} colorChoice={member.colorChoice} />{' '}
+              <MemberIcon id={member.icon} colorChoice={member.colorChoice} />{' '}
               {member.name}
             </Link>
           </li>

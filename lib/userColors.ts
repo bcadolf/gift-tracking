@@ -17,8 +17,10 @@ export const USER_COLORS = [
   'fuchsia',
   'pink',
   'rose',
-];
+] as const;
+
+export type UserColor = (typeof USER_COLORS)[number];
 
 export function safeUserColor(color: string) {
-  return USER_COLORS.includes(color) ? color : undefined;
+  return (USER_COLORS as readonly string[]).includes(color) ? color : undefined;
 }

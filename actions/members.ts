@@ -1,16 +1,10 @@
-import tempData from '@/lib/placeholder-data.json';
+'use server';
 
-export async function GetGroupMembers(groupCode: string) {
-  // import db query
+import { createNewMember } from '@/db/queries/members';
+import { revalidatePath } from 'next/cache';
 
-  const groupMembers = tempData.members;
+export async function createAnonMember(groupId: string) {
+  await createNewMember(groupId);
 
-  return groupMembers;
-}
-
-export async function GetMemberData(groupCode: string, memberId: string) {
-  // import db query to filter group member and return
-  const memberData = tempData.members.find((m) => m.id === memberId);
-
-  return memberData;
+  revalidatePath(`/gift-group/${groupId}`);
 }

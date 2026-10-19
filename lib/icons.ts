@@ -1,5 +1,24 @@
+export const ICON_IDS = [
+  'alpaca',
+  'bear',
+  'boar',
+  'cat',
+  'cow',
+  'crab',
+  'fox',
+  'shrimp',
+  'bird',
+  'octopus',
+  'rose',
+  'shark',
+  'sprout',
+  'wolf',
+] as const;
+
+export type IconId = (typeof ICON_IDS)[number];
+
 export interface IconTemplate {
-  id: string;
+  id: IconId;
   name: string;
   dPath: string;
   viewBox: string;
@@ -105,6 +124,8 @@ export const ICON_TEMPLATE: IconTemplate[] = [
     viewBox: '0 0 512 512',
   },
 ];
+
+// export const ICON_IDS = ICON_TEMPLATE.map((i) => i.id);
 
 export function getIcon(id?: string) {
   return ICON_TEMPLATE.find((icon) => icon.id === id) ?? ICON_TEMPLATE[0];

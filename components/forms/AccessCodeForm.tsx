@@ -1,6 +1,6 @@
 'use client';
 
-import { EnterGroup } from '@/actions/groups';
+import { enterGroup } from '@/actions/groups';
 import ActionButton from '../ui/ActionButton';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -13,7 +13,7 @@ export default function GroupCodeInput() {
   async function handleSubmit(e: React.SubmitEvent) {
     e.preventDefault();
     try {
-      const isValidGroup = await EnterGroup(groupCode);
+      const isValidGroup = await enterGroup(groupCode);
 
       if (!isValidGroup) {
         setCodeMessage('Invalid group code. Please try again.');

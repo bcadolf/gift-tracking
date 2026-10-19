@@ -1,46 +1,64 @@
 'use server';
 
-import { customAlphabet } from 'nanoid';
-import tempData from '@/lib/placeholder-data.json';
+import {
+  createNewGroup,
+  getGroupData,
+  validateGroupId,
+} from '@/db/queries/groups';
+import { getGroupMembers } from '@/db/queries/members';
 
-type CreateNewGroupParams = {
+type CreateGroupResult =
+  | { ok: true; id: string }
+  | { ok: false; error: string };
+
+export async function createGroup(data: {
   name: string;
   event: string;
   date: string;
-};
+}): Promise<CreateGroupResult> {
+  const name = data.name?.trim();
+  const event = data.event?.trim();
+  const date = data.date;
 
-export async function CreateNewGroup({
-  name,
-  event,
-  date,
-}: CreateNewGroupParams) {
-  const genCode = customAlphabet('ABCDEFGHIJKMNPQRTUVWXYZ23456789', 8);
-  //   add logic to run db check for unique and save or rerun if needed. and add the db query import
-  let groupCode = genCode();
-
-  while (tempData.group.some((g) => g.id === groupCode)) {
-    groupCode = genCode();
+  if (!name || name.length > 50) {
+    return { ok: false, error: 'Group name must be 1 to 50 characters.' };
+  }
+  if (!event || event.length > 25) {
+    return { ok: false, error: 'Event name must be 1 to 25 characters.' };
+  }
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || Number.isNaN(Date.parse(date))) {
+    return { ok: false, error: 'Please enter a valid date.' };
   }
 
-  tempData.group.push({ id: groupCode, name, event, date });
+  try {
+    const result = await createNewGroup(data);
 
-  return groupCode;
-}
-
-export async function EnterGroup(groupCode: string) {
-  // import db query to check group code and delele code below
-
-  if (!tempData.group.find((g) => g.id === groupCode)) {
-    return false;
+    return { ok: true, id: result };
+  } catch (e) {
+    console.error('Problem creating group: ', e);
+    return { ok: false, error: 'Error occured please try again.' };
   }
-
-  return true;
 }
 
-export async function GetGroupData(groupCode: string) {
-  // import db query to filter group and return
+export async function enterGroup(groupCode: string) {
+  const result = await validateGroupId(groupCode);
+  return result;
+}
 
-  const groupData = tempData.group.find((g) => g.id === groupCode); // replace with db result
+export async function getGroupWithMembers(groupCode: string) {
+  try {
+    const [groupData, memData] = await Promise.all([
+      getGroupData(groupCode),
+      getGroupMembers(groupCode),
+    ]);
 
-  return groupData;
+    const group = groupData[0];
+    if (!group) {
+      return null;
+    }
+
+    return { group, memData };
+  } catch (e) {
+    console.error('Error: ', e);
+  }
 }

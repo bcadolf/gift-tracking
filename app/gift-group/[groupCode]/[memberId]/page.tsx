@@ -1,16 +1,18 @@
-import { GetMemberData } from '@/actions/members';
+import { getMemberById } from '@/db/queries/members';
 
 export default async function GroupMemberPage({
   params,
 }: {
-  params: Promise<{ groupCode: string; memberId: string }>;
+  params: Promise<{ memberId: string }>;
 }) {
-  const { groupCode, memberId } = await params;
+  const { memberId } = await params;
 
-  const memberData = await GetMemberData(groupCode, memberId);
+  const member = await getMemberById(memberId);
+
   return (
     <div>
       <h1>Made it</h1>
+      {member.name}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import { createGroup } from '@/actions/groups';
+import { createGroupAction } from '@/actions/groups';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import ActionButton from '../ui/ActionButton';
@@ -17,7 +17,7 @@ export default function CreateGroupForm() {
   async function handleSubmit(e: React.SubmitEvent) {
     e.preventDefault();
 
-    const newCode = await createGroup({ name, event, date });
+    const newCode = await createGroupAction({ name, event, date });
 
     if (newCode.ok) {
       setCode(newCode.id);

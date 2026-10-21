@@ -19,7 +19,7 @@ export default function ActionButton({
       onClick={onClick}
       form={form}
       disabled={disabled}
-      className='rounded-md bg-primary border-2 border-primary-soft transition-colors hover:border-accent px-3 py-2 text-primary-foreground hover:bg-primary-hover shadow-md shadow-current'
+      className='rounded-md bg-primary border-2 border-primary-soft transition-colors hover:border-accent px-2 py-1 text-primary-foreground hover:bg-primary-hover shadow-md shadow-current hover:shadow-sm'
     >
       {name}
     </button>

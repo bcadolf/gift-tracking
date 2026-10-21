@@ -6,13 +6,13 @@ import { memAnon } from '@/lib/anonMember';
 const MAX_TRIES = 5;
 
 export async function getMemberById(memberId: string) {
-  // import db query to filter group member and return
-  const memberData = await db
+  const [member] = await db
     .select()
     .from(members)
-    .where(eq(members.id, memberId));
+    .where(eq(members.id, memberId))
+    .limit(1);
 
-  return memberData;
+  return member;
 }
 
 export async function createNewMember(groupId: string) {
@@ -45,4 +45,13 @@ export async function getGroupMembers(groupId: string) {
     .where(eq(members.groupId, groupId));
 
   return groupMembers;
+}
+
+export async function deleteMember(memberId: string): Promise<boolean> {
+  const result = await db
+    .delete(members)
+    .where(eq(members.id, memberId))
+    .returning({ id: members.id });
+
+  return result.length > 0;
 }

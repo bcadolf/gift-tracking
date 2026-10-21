@@ -30,7 +30,11 @@ export async function createNewGroup({
 
 export async function getGroupData(groupId: string) {
   try {
-    const group = await db.select().from(groups).where(eq(groups.id, groupId));
+    const group = await db
+      .select()
+      .from(groups)
+      .where(eq(groups.id, groupId))
+      .limit(1);
 
     return group;
   } catch (e) {
@@ -47,4 +51,13 @@ export async function validateGroupId(inputId: string): Promise<boolean> {
     .limit(1);
 
   return !!group;
+}
+
+export async function deleteGroup(groupId: string): Promise<boolean> {
+  const result = await db
+    .delete(groups)
+    .where(eq(groups.id, groupId))
+    .returning({ id: groups.id });
+
+  return result.length > 0;
 }

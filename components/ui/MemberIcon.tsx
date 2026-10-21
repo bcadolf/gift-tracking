@@ -12,7 +12,7 @@ export default function MemberIcon({ id, colorChoice = 'slate' }: IconProps) {
   return (
     <div
       data-theme={safeUserColor(colorChoice)}
-      className={`rounded-full bg-current/10 p-1 w-12 h-12 text-primary border border-current`}
+      className={`rounded-full bg-white/30 p-1 w-12 h-12 text-primary border border-current`}
     >
       <svg viewBox={icon.viewBox} role='img' aria-label={icon.name}>
         <path d={icon.dPath} fill='currentColor' />

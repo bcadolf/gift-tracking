@@ -6,10 +6,10 @@ import DeleteButton from '@/components/ui/DeleteButton';
 export default async function GiftGroupPage({
   params,
 }: {
-  params: Promise<{ groupCode: string }>;
+  params: Promise<{ groupId: string }>;
 }) {
-  const { groupCode } = await params;
-  const query = await getGroupWithMembersAction(groupCode);
+  const { groupId } = await params;
+  const query = await getGroupWithMembersAction(groupId);
 
   if (!query) {
     return <div>Difficulties finding the group.</div>;
@@ -22,7 +22,7 @@ export default async function GiftGroupPage({
     <div className='relative flex items-center justify-center flex-col p-4'>
       <DeleteButton
         name='Group'
-        deleteFunction={deleteGroupAction.bind(null, groupCode)}
+        deleteFunction={deleteGroupAction.bind(null, groupId)}
         size='text-lg'
       />
       <h1 className='p-4 m-4'>
@@ -30,7 +30,7 @@ export default async function GiftGroupPage({
       </h1>
       <h3>Click your name:</h3>
       <MemberList members={members} />
-      <AddMemberForm groupCode={groupCode} />
+      <AddMemberForm groupCode={groupId} />
     </div>
   );
 }

@@ -4,6 +4,7 @@ interface ActionButtonProps {
   type: 'button' | 'submit' | 'reset';
   disabled?: boolean;
   form?: string;
+  className?: string;
 }
 
 export default function ActionButton({
@@ -12,6 +13,7 @@ export default function ActionButton({
   type,
   disabled,
   form,
+  className,
 }: ActionButtonProps) {
   return (
     <button
@@ -19,7 +21,7 @@ export default function ActionButton({
       onClick={onClick}
       form={form}
       disabled={disabled}
-      className='rounded-md bg-primary border-2 border-primary-soft transition-colors hover:border-accent px-2 py-1 text-primary-foreground hover:bg-primary-hover shadow-md shadow-current hover:shadow-sm'
+      className={`rounded-md bg-primary border-2 border-primary-soft transition-colors hover:border-accent px-2 py-1 text-primary-foreground hover:bg-primary-hover shadow-md shadow-current hover:shadow-sm ${className}`}
     >
       {name}
     </button>

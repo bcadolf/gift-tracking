@@ -8,8 +8,7 @@ export type CreateNewMemberParams = Pick<
   typeof members.$inferInsert,
   'name' | 'icon' | 'colorChoice' | 'groupId'
 >;
-
-export type Combo = { icon: IconId; colorChoice: string };
+export type MemberPartial = Partial<Member>;
 
 // Group types
 export type Group = typeof groups.$inferSelect;

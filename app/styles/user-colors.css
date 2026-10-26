@@ -117,10 +117,183 @@
   --primary-soft-text: var(--color-pink-700);
   --primary-foreground: white;
 }
-[data-theme='rose'] {
-  --primary: var(--color-rose-500);
-  --primary-hover: var(--color-rose-600);
-  --primary-soft: var(--color-rose-100);
-  --primary-soft-text: var(--color-rose-700);
+[data-theme='olive'] {
+  --primary: var(--color-olive-500);
+  --primary-hover: var(--color-olive-600);
+  --primary-soft: var(--color-olive-100);
+  --primary-soft-text: var(--color-olive-700);
   --primary-foreground: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-theme='slate'] {
+    --primary: var(--color-slate-400);
+    --primary-hover: var(--color-slate-300);
+    --primary-soft: color-mix(
+      in oklab,
+      var(--color-slate-400) 20%,
+      transparent
+    );
+    --primary-soft-text: var(--color-slate-300);
+    --primary-foreground: var(--color-slate-950);
+  }
+  [data-theme='red'] {
+    --primary: var(--color-red-400);
+    --primary-hover: var(--color-red-300);
+    --primary-soft: color-mix(in oklab, var(--color-red-400) 20%, transparent);
+    --primary-soft-text: var(--color-red-300);
+    --primary-foreground: var(--color-red-950);
+  }
+  [data-theme='orange'] {
+    --primary: var(--color-orange-400);
+    --primary-hover: var(--color-orange-300);
+    --primary-soft: color-mix(
+      in oklab,
+      var(--color-orange-400) 20%,
+      transparent
+    );
+    --primary-soft-text: var(--color-orange-300);
+    --primary-foreground: var(--color-orange-950);
+  }
+  [data-theme='amber'] {
+    --primary: var(--color-amber-400);
+    --primary-hover: var(--color-amber-300);
+    --primary-soft: color-mix(
+      in oklab,
+      var(--color-amber-400) 20%,
+      transparent
+    );
+    --primary-soft-text: var(--color-amber-300);
+    --primary-foreground: var(--color-amber-950);
+  }
+  [data-theme='yellow'] {
+    --primary: var(--color-yellow-400);
+    --primary-hover: var(--color-yellow-300);
+    --primary-soft: color-mix(
+      in oklab,
+      var(--color-yellow-400) 20%,
+      transparent
+    );
+    --primary-soft-text: var(--color-yellow-300);
+    --primary-foreground: var(--color-yellow-950);
+  }
+  [data-theme='lime'] {
+    --primary: var(--color-lime-400);
+    --primary-hover: var(--color-lime-300);
+    --primary-soft: color-mix(in oklab, var(--color-lime-400) 20%, transparent);
+    --primary-soft-text: var(--color-lime-300);
+    --primary-foreground: var(--color-lime-950);
+  }
+  [data-theme='green'] {
+    --primary: var(--color-green-400);
+    --primary-hover: var(--color-green-300);
+    --primary-soft: color-mix(
+      in oklab,
+      var(--color-green-400) 20%,
+      transparent
+    );
+    --primary-soft-text: var(--color-green-300);
+    --primary-foreground: var(--color-green-950);
+  }
+  [data-theme='emerald'] {
+    --primary: var(--color-emerald-400);
+    --primary-hover: var(--color-emerald-300);
+    --primary-soft: color-mix(
+      in oklab,
+      var(--color-emerald-400) 20%,
+      transparent
+    );
+    --primary-soft-text: var(--color-emerald-300);
+    --primary-foreground: var(--color-emerald-950);
+  }
+  [data-theme='teal'] {
+    --primary: var(--color-teal-400);
+    --primary-hover: var(--color-teal-300);
+    --primary-soft: color-mix(in oklab, var(--color-teal-400) 20%, transparent);
+    --primary-soft-text: var(--color-teal-300);
+    --primary-foreground: var(--color-teal-950);
+  }
+  [data-theme='cyan'] {
+    --primary: var(--color-cyan-400);
+    --primary-hover: var(--color-cyan-300);
+    --primary-soft: color-mix(in oklab, var(--color-cyan-400) 20%, transparent);
+    --primary-soft-text: var(--color-cyan-300);
+    --primary-foreground: var(--color-cyan-950);
+  }
+  [data-theme='sky'] {
+    --primary: var(--color-sky-400);
+    --primary-hover: var(--color-sky-300);
+    --primary-soft: color-mix(in oklab, var(--color-sky-400) 20%, transparent);
+    --primary-soft-text: var(--color-sky-300);
+    --primary-foreground: var(--color-sky-950);
+  }
+  [data-theme='blue'] {
+    --primary: var(--color-blue-400);
+    --primary-hover: var(--color-blue-300);
+    --primary-soft: color-mix(in oklab, var(--color-blue-400) 20%, transparent);
+    --primary-soft-text: var(--color-blue-300);
+    --primary-foreground: var(--color-blue-950);
+  }
+  [data-theme='indigo'] {
+    --primary: var(--color-indigo-400);
+    --primary-hover: var(--color-indigo-200);
+    --primary-soft: color-mix(
+      in oklab,
+      var(--color-indigo-300) 20%,
+      transparent
+    );
+    --primary-soft-text: var(--color-indigo-400);
+    --primary-foreground: var(--color-indigo-950);
+  }
+  [data-theme='violet'] {
+    --primary: var(--color-violet-400);
+    --primary-hover: var(--color-violet-300);
+    --primary-soft: color-mix(
+      in oklab,
+      var(--color-violet-400) 20%,
+      transparent
+    );
+    --primary-soft-text: var(--color-violet-300);
+    --primary-foreground: var(--color-violet-950);
+  }
+  [data-theme='purple'] {
+    --primary: var(--color-purple-400);
+    --primary-hover: var(--color-purple-300);
+    --primary-soft: color-mix(
+      in oklab,
+      var(--color-purple-400) 20%,
+      transparent
+    );
+    --primary-soft-text: var(--color-purple-300);
+    --primary-foreground: var(--color-purple-950);
+  }
+  [data-theme='fuchsia'] {
+    --primary: var(--color-fuchsia-400);
+    --primary-hover: var(--color-fuchsia-300);
+    --primary-soft: color-mix(
+      in oklab,
+      var(--color-fuchsia-400) 20%,
+      transparent
+    );
+    --primary-soft-text: var(--color-fuchsia-300);
+    --primary-foreground: var(--color-fuchsia-950);
+  }
+  [data-theme='pink'] {
+    --primary: var(--color-pink-400);
+    --primary-hover: var(--color-pink-300);
+    --primary-soft: color-mix(in oklab, var(--color-pink-400) 20%, transparent);
+    --primary-soft-text: var(--color-pink-300);
+    --primary-foreground: var(--color-pink-950);
+  }
+  [data-theme='olive'] {
+    --primary: var(--color-olive-400);
+    --primary-hover: var(--color-olive-300);
+    --primary-soft: color-mix(
+      in oklab,
+      var(--color-olive-400) 20%,
+      transparent
+    );
+    --primary-soft-text: var(--color-olive-300);
+    --primary-foreground: var(--color-olive-950);
+  }
 }

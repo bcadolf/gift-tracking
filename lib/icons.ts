@@ -1,3 +1,5 @@
+import { USER_COLORS, UserColor } from './userColors';
+
 export const ICON_IDS = [
   'alpaca',
   'bear',
@@ -129,4 +131,18 @@ export const ICON_TEMPLATE: IconTemplate[] = [
 
 export function getIcon(id?: string) {
   return ICON_TEMPLATE.find((icon) => icon.id === id) ?? ICON_TEMPLATE[0];
+}
+
+export type Combo = { icon: IconId; colorChoice: UserColor };
+
+const ALL_COMBOS: Combo[] = ICON_IDS.flatMap((icon) =>
+  USER_COLORS.map((colorChoice) => ({ icon, colorChoice })),
+);
+
+export const comboKey = ({ icon, colorChoice }: Combo) =>
+  `${icon}:${colorChoice}`;
+
+export function getFreeIconCombos(taken: Combo[] = []): Combo[] {
+  const used = new Set(taken.map(comboKey));
+  return ALL_COMBOS.filter((c) => !used.has(comboKey(c)));
 }

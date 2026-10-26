@@ -16,7 +16,7 @@ export const USER_COLORS = [
   'purple',
   'fuchsia',
   'pink',
-  'rose',
+  'olive',
 ] as const;
 
 export type UserColor = (typeof USER_COLORS)[number];

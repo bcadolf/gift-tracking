@@ -2,6 +2,7 @@ import { db } from '@/db';
 import { members } from '@/db/schema';
 import { eq } from 'drizzle-orm';
 import { memAnon } from '@/lib/anonMember';
+import { MemberPartial } from '../types';
 
 const MAX_TRIES = 5;
 
@@ -45,6 +46,31 @@ export async function getGroupMembers(groupId: string) {
     .where(eq(members.groupId, groupId));
 
   return groupMembers;
+}
+
+export async function getGroupMemberIconCombos(groupId: string) {
+  const combos = db
+    .select({
+      id: members.id,
+      icon: members.icon,
+      colorChoice: members.colorChoice,
+    })
+    .from(members)
+    .where(eq(members.groupId, groupId));
+
+  return combos;
+}
+
+export async function updateMemberById(memberId: string, input: MemberPartial) {
+  const [updated] = await db
+    .update(members)
+    .set(input)
+    .where(eq(members.id, memberId))
+    .returning();
+
+  if (!updated) throw new Error('Member not found');
+
+  return updated;
 }
 
 export async function deleteMember(memberId: string): Promise<boolean> {
